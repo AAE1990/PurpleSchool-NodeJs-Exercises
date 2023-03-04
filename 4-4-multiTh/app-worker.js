@@ -39,4 +39,3 @@ const main = async () => {
 
 main();
 
-//коммент для пул реквеста в ветку new_branch

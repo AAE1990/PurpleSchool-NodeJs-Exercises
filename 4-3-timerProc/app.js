@@ -1,22 +1,21 @@
 function Timer() {
 
-    const argvs = process.argv;
-    const argv = argvs.slice(2);
-    const operation = argv[0];
-    const timeCall = '5 часов 10 минут 1 секунда';
-  
-    setTimeout(() => {
-      if (operation === 'Таймер') {
-        console.log(operation + ' вызова');
-      }
-    }, 2000); //нужно вызвать команду "Таймер вызова".
-  
-    console.log(timeCall);
-  }
-  
-  Timer();
+  const argvs = process.argv;
+  const argv = argvs.slice(2);
+  const operation = argv[0];
+  const timeCall = '5 часов 10 минут 1 секунда';
 
-  //коммент для пул реквеста в ветку new_branch
+  setTimeout(() => {
+    if (operation === 'Таймер') {
+      console.log(operation + ' вызова');
+    }
+  }, 2000); //нужно вызвать команду "Таймер вызова".
+
+  console.log(timeCall);
+}
+
+Timer();
+
   
    /*  setTimeout(() => {
       const date = new Date();

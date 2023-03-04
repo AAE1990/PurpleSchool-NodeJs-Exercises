@@ -11,5 +11,3 @@ class myEmitter extends MyEmitter {
 }
 
 module.exports = myEmitter;
-
-//коммент для пул реквеста в ветку new_branch

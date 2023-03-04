@@ -26,5 +26,3 @@ function Calculate() {
 
 module.exports = Calculate();
 
-
-//коммент для пул реквеста в ветку new_branch
