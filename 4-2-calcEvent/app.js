@@ -20,3 +20,5 @@ eventCalc.addListener("деление", (a,b)=> {
 });
 
 eventCalc.log('Калькулятор Эвент событий');
+
+//коммент для пул реквеста в ветку new_branch

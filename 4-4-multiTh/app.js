@@ -29,3 +29,5 @@ const GenDivisor = () => {
 }
 
 GenDivisor();
+
+//коммент для пул реквеста в ветку new_branch

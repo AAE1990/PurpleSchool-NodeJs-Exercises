@@ -26,3 +26,5 @@ const compute = () => {
 };
 
 parentPort.postMessage(compute(workerData));
+
+//коммент для пул реквеста в ветку new_branch

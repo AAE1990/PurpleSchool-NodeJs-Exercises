@@ -18,6 +18,7 @@ function Timer() {
   
   Timer();
 
+  //коммент для пул реквеста в ветку new_branch
 
 /* function Timer() {
     const argvs = process.argv;
