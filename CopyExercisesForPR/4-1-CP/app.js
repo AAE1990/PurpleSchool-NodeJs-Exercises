@@ -1,28 +1,16 @@
-function Calculate() {
+function calculate([, , action, num1, num2] = process.argv) {
     
-    const argvs = process.argv;
-    const argv = argvs.slice(2);
-    const operation = argv[0];
-    const operator1 = +argv[1];
-    const operator2 = parseInt(argv[2]);
+    const actions = {
+      "+": (a, b) => a + b,
+      "-": (a, b) => a - b,
+      "multiply": (a, b) => a * b,
+      "division": (a, b) => a / b,
+    };
+  
+    console.log(actions[action] ?. (parseInt(num1), parseInt(num2))); 
+  }
 
-    if (operation === 'сложение') {
-        console.log(operation + ' равно '
-            + (operator1 + operator2));
-    } 
-    else if (operation === 'вычитание') {
-        console.log(operation + ' равно '
-            + (operator1 - operator2));
-    } 
-    else if (operation === 'умножение') {
-        console.log(operation + ' равно '
-            + (operator1 * operator2));
-    }
-    else if (operation === 'деление') {
-        console.log(operation + ' равно '
-            + (operator1 / operator2));
-    }
-}
+  calculate();
 
-module.exports = Calculate();
-
+/* Сделал через литералы объекта, думаю выносить операции в отдельные файлы не стоит
+но если была старая реализация, где заморочено написаны условия, то тогда бы это имело смысл */
