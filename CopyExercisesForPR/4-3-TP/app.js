@@ -1,34 +1,12 @@
 function Timer() {
+  const [, , hours, minutes, seconds] = process.argv;
 
-    const argvs = process.argv;
-    const argv = argvs.slice(2);
-    const operation = argv[0];
-    const timeCall = '5 часов 10 минут 1 секунда';
-  
-    setTimeout(() => {
-      if (operation === 'Таймер') {
-        console.log(operation + ' вызова');
-      }
-    }, 2000); //нужно вызвать команду "Таймер вызова".
-  
-    console.log(timeCall);
-  }
-  
-  Timer();
-  
-    
-     /*  setTimeout(() => {
-        const date = new Date();
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-        const seconds = date.getSeconds();
-        console.log(hours + " Час(ов): " + minutes + " минут: " + seconds + " секунд");    
-      }, 0);
-    
-      setImmediate(() => {
-        if (operation === 'Таймер') {
-          console.log(operation + ' вызова');
-        }
-      })
-      //Это я задачу не так понял и сделал сначала это :)
-       */
+  setTimeout(() => {
+    if (`${hours} ${minutes} ${seconds}`) {
+      console.log(parseInt(hours) + ' часа(ов) ' + parseInt(minutes) + ' минут(ы) ' + parseInt(seconds) + ' секунд(а)');
+    }
+  }, 2000); 
+
+}
+
+Timer();

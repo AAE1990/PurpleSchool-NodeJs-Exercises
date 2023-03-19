@@ -1,24 +1,25 @@
-const myEmitter = require('./index');
-const eventCalc = new myEmitter();
+const MyEmitter = require('events');
+const eventCalc = new MyEmitter();
 
-eventCalc.on("result", (result)=> console.log(result));
+    eventCalc.on("сложение", (a,b)=> {
+        eventCalc.emit('result', a + b);
+    });
+    eventCalc.on("вычитание", (a,b)=> {
+        eventCalc.emit('result', a - b)
+    });
+    
+    eventCalc.on("умножение", (a,b)=> {
+        eventCalc.emit('result', a * b);
+    });
+    
+    eventCalc.on("деление", (a,b)=> {
+        eventCalc.emit('result', a / b);
+    });
 
-eventCalc.addListener("сложение", (a,b)=> {
-    eventCalc.emit('result', a + b);
-});
+    eventCalc.on("result", (result)=> console.log(result));
+    // будет ли считаться такой вывод всех операцией через консоль?
 
-eventCalc.addListener("вычитание", (a,b)=> {
-    eventCalc.emit('result', a - b)
-});
-
-eventCalc.addListener("умножение", (a,b)=> {
-    eventCalc.emit('result', a * b);
-});
-
-eventCalc.addListener("деление", (a,b)=> {
-    eventCalc.emit('result', a / b);
-});
-
-eventCalc.log('Калькулятор Эвент событий');
-
-
+    eventCalc.emit('сложение', 1, 2);
+    eventCalc.emit('вычитание', 3, 4);
+    eventCalc.emit('умножение', 5, 6);
+    eventCalc.emit('деление', 7, 8);
