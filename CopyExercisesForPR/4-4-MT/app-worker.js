@@ -22,13 +22,14 @@ const compute = () => {
 const main = async () => {
     try {
         performance.mark('start');
-        await compute();
-        /*         сonst result = await Promise.all([
-                    compute([]),
-                    compute([]),
-                    compute([])
-                    console.log(result);
-                ]); */
+        const result = await Promise.all([
+            compute(),
+            compute(),
+            compute(),
+            compute()
+        ]);
+        console.log(result);
+
         performance.mark('stop');
         performance.measure('main', 'start', 'stop');
         console.log(performance.getEntriesByName('main'));

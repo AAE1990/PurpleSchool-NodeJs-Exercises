@@ -22,7 +22,7 @@ const compute = () => {
     for (let i = 0; i <Math.ceil(divisor.length/size); i++){
         subarray[i] = divisor.slice((i*size), (i*size) + size);
     }
-    console.log(subarray)
+    return subarray;
 };
 
 parentPort.postMessage(compute(workerData));
