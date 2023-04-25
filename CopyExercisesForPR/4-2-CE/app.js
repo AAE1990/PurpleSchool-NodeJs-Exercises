@@ -1,25 +1,45 @@
 const MyEmitter = require('events');
 const eventCalc = new MyEmitter();
 
-    eventCalc.on("сложение", (a,b)=> {
-        eventCalc.emit('result', a + b);
-    });
-    eventCalc.on("вычитание", (a,b)=> {
-        eventCalc.emit('result', a - b)
-    });
-    
-    eventCalc.on("умножение", (a,b)=> {
-        eventCalc.emit('result', a * b);
-    });
-    
-    eventCalc.on("деление", (a,b)=> {
-        eventCalc.emit('result', a / b);
-    });
+[, , action, num1, num2] = process.argv;
 
-    eventCalc.on("result", (result)=> console.log(result));
-    // будет ли считаться такой вывод всех операцией через консоль?
+eventCalc.on("add", (a, b) => {
+    let sum = a + b;
+    console.log("сложение", a, "+", b, "=", sum);
+    eventCalc.emit('result', sum);
+});
 
-    eventCalc.emit('сложение', 1, 2);
-    eventCalc.emit('вычитание', 3, 4);
-    eventCalc.emit('умножение', 5, 6);
-    eventCalc.emit('деление', 7, 8);
+eventCalc.on("sub", (a, b) => {
+    let sum = a - b;
+    console.log("вычитание", a, "-", b, "=", sum);
+    eventCalc.emit('result', sum);
+});
+
+eventCalc.on("mult", (a, b) => {
+    let sum = a * b;
+    console.log("умножение", a, "*", b, "=", sum);
+    eventCalc.emit('result', sum);
+});
+
+eventCalc.on("div", (a, b) => {
+    let sum = a / b;
+    console.log("деление", a, "/", b, "=", sum);
+    eventCalc.emit('result', sum);
+});
+
+if (action == "add") {
+    eventCalc.emit("add", parseInt(num1), parseInt(num2))
+} else if
+    (action == "sub") {
+    eventCalc.emit("sub", parseInt(num1), parseInt(num2))
+} else if
+    (action == "mult") {
+    eventCalc.emit("mult", parseInt(num1), parseInt(num2))
+} else if
+    (action == "div") {
+    eventCalc.emit("div", parseInt(num1), parseInt(num2))
+};
+
+
+// Я долго думал над тем как process.argv сделать с эмиттером, а пока думал прошел основной курс по ноде.
+// Получилось, но можно и надо сделать код короче.
